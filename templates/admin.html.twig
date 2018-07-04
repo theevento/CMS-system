@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Paweł Pieczonka blog - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+    {% block css %}{% endblock %}
+</head>
+<body>
+<div class="app">
+    <header class="header--admin">
+        <adminnav></adminnav>
+    </header>
+    <main class="main--admin">
+        <div class="container-fluid">
+            {% block main %}
+            {% endblock %}
+        </div>
+    </main>
+</div>
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script src="{{ asset('ckeditor/plugins/codesnippet/plugin.js') }}"></script>
+<script src="{{ asset('build/app.js') }}"></script>
+</body>
+</html>

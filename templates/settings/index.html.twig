@@ -1,0 +1,15 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% extends 'admin.html.twig' %}
+
+{% block title %} {% endblock %}
+
+{% block main %}
+    <div style="margin-top: 15px;">
+        {% if success is defined %}
+            <div class="alert alert-success" role="alert">
+                Ustawienia zostały zapisane.
+            </div>
+        {% endif %}
+        {{ form(form) }}
+    </div>
+{% endblock %}

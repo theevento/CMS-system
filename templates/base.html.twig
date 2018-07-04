@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Paweł Pieczonka blog - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+    {% block css %}{% endblock %}
+</head>
+<body>
+<header class="header">
+    <nav class="header__nav">
+        {{ render(controller('App\\Controller\\IndexController::header')) }}
+    </nav>
+
+</header>
+<main class="main">
+    <div class="main__div--container container-fluid app">
+        {% block main %}
+        {% endblock %}
+    </div>
+</main>
+<footer class="footer">
+    {{ render(controller('App\\Controller\\IndexController::footer')) }}
+</footer>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src="{{ asset('build/app.js') }}"></script>
+</body>
+</html>

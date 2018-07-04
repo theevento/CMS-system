@@ -1,0 +1,26 @@
+<div class="header__nav__div header__nav__div--logo">
+    <h1 class="header__nav__div__h1"><a class="header__nav__div__a" href="/">{{ banner.0.title }}</a></h1>
+</div>
+<div class="header__nav__div header__nav__div--menu">
+    {% for menu in menu %}
+        {% if menu.newTab == false %}
+            {% if menu.page.type == 'inside' %}
+                <a class="header__nav__div__a--link" href="/static/{{ menu.page.id }}">{{ menu.name }}</a>
+            {% else %}
+                <a class="header__nav__div__a--link" href="{{ menu.page.page }}">{{ menu.name }}</a>
+            {% endif %}
+        {% else %}
+            {% if menu.page.type == 'inside' %}
+                <a class="header__nav__div__a--link" target="_blank" href="/static/{{ menu.page.id }}">{{ menu.name }}</a>
+            {% else %}
+                <a class="header__nav__div__a--link" target="_blank" href="{{ menu.page.page }}">{{ menu.name }}</a>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    {% if app.user %}
+        <a class="header__nav__div__a--link" href="/admin/dashboard">Panel administracyjny</a>
+        <a class="header__nav__div__a--link" href="/logout">Wyloguj</a>
+    {% else %}
+        <a class="header__nav__div__a--link" href="/login">Zaloguj</a>
+    {% endif %}
+</div>

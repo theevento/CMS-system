@@ -1,0 +1,77 @@
+App\Entity\Article:
+    properties:
+        title:
+            - NotNull:
+                message: Tytuł nie może być pusty.
+            - NotBlank:
+                message: Tytuł nie może być pusty.
+            - Length:
+                max: 40
+                maxMessage: 'Maksymalna długość tytułu wynosi {{ limit }} znaków.'
+        image:
+            - NotNull:
+                message: Zdjęcie artykułu nie może być puste.
+            - File:
+                mimeTypes: ['image/jpeg', 'image/png']
+                mimeTypesMessage: Obsługiwane formaty png, jpg, jpeg.
+                maxSize: 3072k
+                maxSizeMessage: Maksymalny rozmiar pliku to 3MB.
+        article:
+            - NotNull:
+                message: Artykuł nie może być pusty.
+            - NotBlank:
+                message: Artykuł nie może być pusty.
+        active:
+            - Type:
+                type: bool
+                message: Niepoprawna wartość checkboxa.
+        description:
+            - NotNull:
+                message: Opis nie może być pusty.
+            - NotBlank:
+                message: Opis nie może być pusty.
+            - Length:
+                max: 250
+                maxMessage: 'Maksymalna długość opisu wynosi {{ limit }} znaków.'
+
+App\Entity\ArticleComments:
+    properties:
+        name:
+            - NotNull:
+                message: Imie nie może być puste.
+            - Length:
+                max: 30
+                maxMessage: 'Maksymalna długość imienia {{ limit }}'
+        email:
+            - Email:
+                message: Podany e-mail "{{ value }}" nie jest prawidłowy.
+                checkMX: true
+            - NotNull:
+                message: E-mail nie może być pusty.
+            - Length:
+                max: 45
+                maxMessage: 'Maksymalna długość e-mail wynosi {{ limit }}'
+        comment:
+            - NotNull:
+                message: Komentarz nie może być pusty.
+            - Length:
+                max: 250
+                maxMessage: 'Maksymalna długość komentarza wynosi {{ limit }}'
+
+
+
+App\Entity\Pages:
+    properties:
+        name:
+            - NotNull:
+                message: Nazwa nie może być pusta.
+            - NotBlank:
+                message: Nazwa nie może być pusta.
+            - Length:
+                max: 30
+                maxMessage: 'Maksymalna długość nazwy wynosi {{ limit }}'
+        page:
+            - NotNull:
+                message: Strona nie może być pusta.
+            - NotBlank:
+                message: Strona nie może być pusta.

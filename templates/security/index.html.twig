@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    {% if error|length > 0 %}
+        {% set errors = true %}
+    {% else %}
+        {% set errors = false %}
+    {% endif %}
+    <login :showerror="'{{ errors }}'" :username="'{{ last_username }}'"></login>
+{% endblock %}
