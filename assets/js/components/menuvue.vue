@@ -66,7 +66,6 @@
                 form.append('new_tab', this.menu.new_tab);
                 form.append('active', this.menu.active);
                 axios.post(window.location.href, form).then(function(response){
-                    console.log(response);
                     if(response.data.status === true)
                     {
                         self.status.success = true;

@@ -75,7 +75,6 @@
               form.append('article', this.form.article);
               form.append('description', this.form.description);
               axios.post(window.location.href, form).then(function(response){
-                  console.log(response);
                   if(response.data.status === true)
                   {
                       self.status.success = true;

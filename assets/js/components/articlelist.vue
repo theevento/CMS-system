@@ -144,7 +144,6 @@
                 form.append('description', this.article.description);
 
                 axios.post(window.location.href, form).then(function(response){
-                    console.log(response);
                     if(response.data.status === true)
                     {
                         self.status.success = true;

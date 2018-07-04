@@ -121,7 +121,6 @@
                 this.status.success = null;
                 let form = new FormData();
                 let self = this;
-                console.log(this.menu);
 
                 form.append('id', this.menu.id);
                 form.append('page', this.menu.page_id);
@@ -130,7 +129,6 @@
                 form.append('active', this.menu.active);
 
                 axios.post(window.location.href, form).then(function(response){
-                    console.log(response);
                     if(response.data.status === true)
                     {
                         self.status.success = true;

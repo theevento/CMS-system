@@ -10,11 +10,11 @@ doctrine:
         default_connection:   default
         connections:
             default:
-                dbname:               blog
-                host:                 localhost
+                dbname:               ###
+                host:                 ###
                 port:                 ~
-                user:                 admin
-                password:             Szaman$01
+                user:                 ###
+                password:             ###
                 charset:              ~
                 default_table_options:
                     charset:          utf8

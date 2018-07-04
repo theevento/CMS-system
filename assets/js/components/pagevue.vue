@@ -67,7 +67,6 @@
                 form.append('type', this.form.type);
 
                 axios.post(window.location.href, form).then(function(response){
-                    console.log(response);
                     if(response.data.status === true)
                     {
                         self.status.success = true;
