@@ -4,7 +4,6 @@ parameters:
     locale: 'en'
     article_directory: '%kernel.project_dir%/public/uploads/article'
     article_real_target_directory: 'uploads/article/'
-    google_recaptcha_site_key: '%env(GOOGLE_RECAPTCHA_SITE_KEY)%'
 
 services:
     # default configuration for services in *this* file
@@ -38,5 +37,5 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 ewz_recaptcha:
-    public_key:  ###
-    private_key: ###
+    public_key:  ##
+    private_key: ##

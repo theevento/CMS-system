@@ -1,0 +1,10 @@
+DirectoryIndex public/index.php
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)\.(gif|jpg|png|jpeg|css|js|swf|woff|ttf|woff2)$ /public/$1.$2 [L,NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/index.php/$1 [L,QSA]
+SetEnv APP_ENV prod
+
