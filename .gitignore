@@ -24,3 +24,6 @@ yarn-error.log
 
 .idea/
 /composer.lock
+config/services.yaml
+config/packages/doctrine.yaml
+public/uploads

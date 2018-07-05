@@ -41,6 +41,19 @@ class ArticleTagsRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function findArticleByTagName($name)
+    {
+        return $this->createQueryBuilder('t')
+            ->select('a.id, a.image, a.description, a.title')
+            ->innerJoin('App:Article', 'a', 'WITH', 'a.id = t.article')
+            ->andWhere('a.active = TRUE')
+            ->andWhere('t.tag = :name')
+            ->setParameter('name', $name)
+            ->orderBy('a.date', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
+
 //    /**
 //     * @return ArticleTags[] Returns an array of ArticleTags objects
 //     */

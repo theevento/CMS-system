@@ -1,5 +1,6 @@
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 {% extends 'base.html.twig' %}
+{% block title %}Artykuł{% endblock %}
 {% block main %}
     <post :popular="{{ popular }}" :article_data="{{ article }}" :tags="{{ tags }}" :author="{{ author }}" :comments="{{ comments }}" :form="{{ form(form)|json_encode }}"></post>
 

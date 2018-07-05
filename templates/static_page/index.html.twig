@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+{% block title %}{{ page.name }}{% endblock %}
+{% block css %}
+ <style>
+  img{
+   max-width: 100%;
+  }
+ </style>
+{% endblock %}
+{% block main %}
+ {{ page.page|raw }}
+{% endblock %}

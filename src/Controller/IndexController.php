@@ -111,4 +111,11 @@ class IndexController extends Controller
             'footer' => $settingsRepository->findAll()
         ]);
     }
+
+    public function title(SettingsRepository $settingsRepository)
+    {
+        return $this->render('index/title.html.twig', [
+            'title' => $settingsRepository->findAll()
+        ]);
+    }
 }

@@ -17,6 +17,7 @@ Encore
     .enableVueLoader()
     // uncomment if you use Sass/SCSS files
     .enableSassLoader()
+    .autoProvidejQuery()
 
 // uncomment for legacy applications that require $/jQuery as a global variable
 // .autoProvidejQuery()

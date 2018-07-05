@@ -15,6 +15,7 @@ import pagevue from './components/pagevue';
 import pagelist from './components/pagelist';
 import menuvue from './components/menuvue';
 import menulist from './components/menulist';
+import tagsearch from './components/tagsearch';
 
 require('../scss/main.scss');
 window.axios = axios;
@@ -35,6 +36,7 @@ const app = new Vue({
         pagevue,
         pagelist,
         menuvue,
-        menulist
+        menulist,
+        tagsearch
     }
 });

@@ -10,8 +10,8 @@
                         <h2 class="article__header__div__h2">{{ article_data.title }}</h2>
                         <div class="article__header__div__div">
                             <span class="article__header__div__div__span">Opublikowane przez {{ author.name }} w</span>
-                            <span class="article__header__div__div__span--tags">
-                                <a href="#" v-for="tags in tags" class="article__header__div__div__span--tags__a">{{ tags.tag }}</a>
+                            <span v-for="tags in tags" class="article__header__div__div__span--tags">
+                                <a v-bind:href="'/tags/'+tags.tag"  class="article__header__div__div__span--tags__a">{{ tags.tag }}</a>
                             </span>
                             <a href="#comments" class="article__header__div__div__a">{{ comments_length }} komentarzy</a>
                         </div>
@@ -75,6 +75,13 @@
         }
     }
 </script>
+
+<style>
+    .article__article__div img
+    {
+        max-width: 100%;
+    }
+</style>
 
 <style scoped lang="scss">
     .article
