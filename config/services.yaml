@@ -38,5 +38,5 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 ewz_recaptcha:
-    public_key:  '6LfkZWAUAAAAAM2Qyn8ra_0LeEpUXiBHW7k8qxeJ'
-    private_key: '6LfkZWAUAAAAAPkfbikPvPzDDLcI2W-V154Jq2Ji'
+    public_key:  ###
+    private_key: ###
