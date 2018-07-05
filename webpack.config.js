@@ -1,4 +1,6 @@
 var Encore = require('@symfony/webpack-encore');
+const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 Encore
 // the project directory where compiled assets will be stored
@@ -6,15 +8,13 @@ Encore
     // the public path used by the web server to access the previous directory
     .setPublicPath('/build')
     .cleanupOutputBeforeBuild()
-    .enableSourceMaps(!Encore.isProduction())
     // uncomment to create hashed filenames (e.g. app.abc123.scss)
-    // .enableVersioning(Encore.isProduction())
+    .enableVersioning(Encore.isProduction())
 
     // uncomment to define the assets of the project
     .addEntry('app', './assets/js/app.js')
     .addEntry('main', './assets/scss/main.scss')
     .enableVueLoader()
-
     // uncomment if you use Sass/SCSS files
     .enableSassLoader()
 
@@ -22,4 +22,10 @@ Encore
 // .autoProvidejQuery()
 ;
 
-module.exports = Encore.getWebpackConfig();
+const webpackConfig = Encore.getWebpackConfig();
+webpackConfig.plugins = webpackConfig.plugins.filter(
+    plugin => !(plugin instanceof webpack.optimize.UglifyJsPlugin)
+);
+webpackConfig.plugins.push(new UglifyJsPlugin());
+
+module.exports = webpackConfig;
