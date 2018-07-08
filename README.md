@@ -1,9 +1,9 @@
 # Simple CMS system 
 
-Live demo: [https://pawelpieczonka.pl/](https://pawelpieczonka.pl/)
+Live demo: [http://demo.pawelpieczonka.pl/](http://demo.pawelpieczonka.pl/)
 
 ## Demo login 
-Login page: [https://pawelpieczonka.pl/login](https://pawelpieczonka.pl/login)
+Login page: [http://demo.pawelpieczonka.pl/login](http://demo.pawelpieczonka.pl/login)
 
 Username: admin
 
